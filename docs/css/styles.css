@@ -397,6 +397,11 @@ h3{ font-size:1.1rem; }
   overflow:hidden; clip:rect(0,0,0,0);
   border:0;
 }
+
+.hidden{
+  display: none !important;
+}
+
 /* ====== SMOOTH SCROLL + SCROLL-MARGIN ====== */
 html{ scroll-behavior: smooth; }
 
@@ -740,6 +745,99 @@ html{ scroll-behavior: smooth; }
   min-width: 140px;
 }
 
+/* ====== TOOLS/NARZĘDZIA ====== */
+.tools{
+  margin: 1.4rem 0;
+  padding: 1rem;
+  background: rgba(234, 227, 248, .4);
+  border-radius: var(--radius);
+  border: 1px solid rgba(108, 99, 137, .12);
+}
+
+.tools-title{
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 0.8rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tools-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tool-chip{
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  background: rgba(172, 150, 207, .15);
+  border: 1px solid rgba(108, 99, 137, .18);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.tools-note{
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.8rem;
+  font-style: italic;
+}
+
+/* ====== OFFER META (Cena/Czas) ====== */
+.offer-meta{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.6rem;
+  padding: 1rem;
+  background: rgba(201, 182, 230, .08);
+  border-radius: var(--radius);
+  border: 1px solid rgba(108, 99, 137, .14);
+}
+
+.offer-meta__item{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.offer-meta__label{
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--muted);
+}
+
+.offer-meta__value{
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.offer-meta__note{
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+  line-height: 1.4;
+  grid-column: 1 / -1;
+}
+
+@media(max-width: 640px){
+  .offer-meta{
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ====== MOBILE MENU LOCK ====== */
 body.menu-open{
   overflow: hidden;
@@ -1024,11 +1122,91 @@ p{
 }
 
 .price-display{
-  font-size: clamp(1.8rem, 5vw, 2.2rem);
-  font-family: Poppins, system-ui, sans-serif;
+  display: none;
+}
+
+/* Price Details Accordion */
+.price-details{
+  margin: 1rem 0;
+  border: none;
+}
+
+.price-details summary{
+  list-style: none;
+  cursor: pointer;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.6rem 0;
+  user-select: none;
+  transition: color .2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-details summary:hover{
+  color: var(--primary-2);
+}
+
+.price-details summary::before{
+  content: "▶";
+  display: inline-block;
+  transition: transform .2s ease;
+  font-size: 0.75rem;
+}
+
+.price-details[open] summary::before{
+  transform: rotate(90deg);
+}
+
+.price-details__body{
+  padding: 0.8rem 1rem;
+  margin-top: 0.6rem;
+  background: rgba(201, 182, 230, .06);
+  border: 1px solid rgba(108, 99, 137, .12);
+  border-radius: var(--radius);
+}
+
+.price-details__desc{
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 0.8rem 0;
+}
+
+.price-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(108, 99, 137, .08);
+}
+
+.price-row:last-of-type{
+  border-bottom: none;
+}
+
+.price-label{
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--muted);
+}
+
+.price-value{
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--primary);
-  margin: 0.4rem 0;
+}
+
+.price-details__note{
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+  display: block;
+  font-style: italic;
 }
 
 .pricing-list{
@@ -1054,7 +1232,7 @@ p{
 }
 
 .mini-details{
-  margin: 0;
+  display: none;
 }
 
 .mini-details summary{

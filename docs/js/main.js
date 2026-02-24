@@ -272,14 +272,53 @@ if(contactForm){
 
     if(!isValid) return;
 
-    // If form has action (Formspree/Netlify), submit normally
-    if(contactForm.action){
-      contactForm.submit();
-    } else {
-      // Demo mode: show success and reset
+    // Prepare form data for Netlify (URLencoded)
+    const formData = new URLSearchParams();
+    formData.append('form-name', 'kontakt');
+    formData.append('name', nameInput.value.trim());
+    formData.append('contact', contactVal);
+    formData.append('message', messageInput.value.trim());
+    formData.append('consent', consentInput.checked ? 'on' : 'off');
+
+    // Submit via fetch to Netlify Forms endpoint
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: formData.toString()
+    })
+    .then(response => {
+      if(!response.ok) throw new Error('Network response was not ok');
+      // Success
       showFeedback('Dziękuję! Odezwiemy się wkrótce.', 'success');
       contactForm.reset();
-    }
+      document.getElementById('mailtoFallback').classList.add('hidden');
+    })
+    .catch(error => {
+      // Error: show fallback mailto
+      console.error('Form submission error:', error);
+      showFeedback('Nie udało się wysłać formularza. Możesz napisać do nas e-mailem.', 'error');
+      
+      // Build mailto link with form data
+      const mailtoLink = buildMailtoLink(
+        nameInput.value.trim(),
+        contactVal,
+        messageInput.value.trim()
+      );
+      
+      const fallbackBtn = document.getElementById('mailtoFallback');
+      fallbackBtn.href = mailtoLink;
+      fallbackBtn.classList.remove('hidden');
+    });
   });
+
+  // Helper function to build mailto link
+  function buildMailtoLink(name, contact, message){
+    const to = 'iwona-sadzik@wp.pl';
+    const subject = encodeURIComponent('Wiadomość ze strony Neuronest');
+    const body = encodeURIComponent(
+      `Imię i nazwisko: ${name}\nKontakt (email/telefon): ${contact}\n\nWiadomość:\n${message}`
+    );
+    return `mailto:${to}?subject=${subject}&body=${body}`;
+  }
 }
 
