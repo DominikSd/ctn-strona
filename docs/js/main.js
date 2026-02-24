@@ -1,3 +1,22 @@
+/* ====== DYNAMIC HEADER HEIGHT ====== */
+(function initHeaderHeight(){
+  const header = document.querySelector('.site-header');
+  const root = document.documentElement;
+  
+  const updateHeaderHeight = () => {
+    if(header){
+      const height = header.offsetHeight;
+      root.style.setProperty('--header-h', height + 'px');
+    }
+  };
+  
+  // Initial call
+  updateHeaderHeight();
+  
+  // Update on resize
+  window.addEventListener('resize', updateHeaderHeight);
+})();
+
 const yearEl = document.getElementById('year');
 if(yearEl) yearEl.textContent = new Date().getFullYear();
 
