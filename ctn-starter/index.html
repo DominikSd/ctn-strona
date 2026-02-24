@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Centrum Terapii Neurorozwojowej – Iwona Sadzik</title>
+  <meta name="description" content="Psycholog dziecięcy i terapeuta SI. Specjalizuję się w integracji sensorycznej, terapii ręki, treningu umiejętności społecznych i neuroflow. Warszawa." />
+  
+  <!-- OG Tags -->
+  <meta property="og:title" content="Centrum Terapii Neurorozwojowej – Iwona Sadzik" />
+  <meta property="og:description" content="Psycholog dziecięcy specjalizująca się w SI, terapii ręki, TUS i neuroflow. Pomoc dla dzieci z trudnościami emocjonalnymi, sensorycznymi i poznawczymi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/images/hero.webp" />
+  <meta property="og:url" content="https://iwona-sadzik.pl" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Centrum Terapii Neurorozwojowej",
+    "image": "./assets/images/hero.webp",
+    "description": "Psycholog dziecięcy i terapeuta SI.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Zoka 1",
+      "addressLocality": "Warszawa",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48667003580",
+    "email": "iwona-sadzik@wp.pl",
+    "url": "https://iwona-sadzik.pl",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img src="assets/icons/logo.svg" alt="" class="brand-mark" />
+        <span class="brand-text">
+          <strong>Centrum Terapii</strong><br/>
+          <span>Neurorozwojowej</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Główne">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">Otwórz menu</span>
+          <span class="burger"></span>
+        </button>
+
+        <ul id="navMenu" class="nav-list">
+          <li><a href="#o-mnie">O mnie</a></li>
+          <li><a href="#oferta">Oferta</a></li>
+          <li><a href="#opinie">Opinie</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="phone" href="tel:+48667003580" aria-label="Zadzwoń 667 003 580">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 10.8 19.86 19.86 0 0 1 .08 2.18 2 2 0 0 1 2.06 0h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L6 7.91a16 16 0 0 0 10.09 10.09l1.58-1.18a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92Z" fill="currentColor"/>
+          </svg>
+          <span>667 003 580</span>
+        </a>
+        <a class="btn btn-primary" href="#kontakt">Umów wizytę</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO + O MNIE -->
+    <section id="o-mnie" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-photo">
+          <img src="assets/images/hero.webp" alt="Zdjęcie terapeutki" />
+        </div>
+
+        <div class="hero-copy">
+          <h1>Iwona Sadzik</h1>
+          <p class="lead">Psycholog dziecięcy i terapeuta SI</p>
+          <p class="sublead">
+            Pomagam dzieciom i młodzieży w rozwoju emocjonalnym, sensorycznym i poznawczym.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt">Umów konsultację</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTA / USŁUGI -->
+    <section id="oferta" class="section services">
+      <div class="container">
+        <div class="cards-5">
+          <button class="card service-card" data-open="diagnoza" aria-controls="diagnoza">
+            <div class="service-icon-wrap">
+              <img src="assets/icons/diagnoza.png" alt="Diagnoza" class="service-icon" />
+            </div>
+            <h3>Diagnoza</h3>
+            <p>Ocena trudności, wywiad i plan terapii dopasowany do dziecka.</p>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="card service-card" data-open="terapia_si" aria-controls="terapia_si">
+            <div class="service-icon-wrap">
+              <img src="assets/icons/terapia_si.png" alt="Terapia SI" class="service-icon" />
+            </div>
+            <h3>Terapia SI</h3>
+            <p>Ćwiczenia i zabawy wspierające integrację sensoryczną.</p>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="card service-card" data-open="terapia_reki" aria-controls="terapia_reki">
+            <div class="service-icon-wrap">
+              <img src="assets/icons/terapia_reki.png" alt="Terapia ręki" class="service-icon" />
+            </div>
+            <h3>Terapia ręki</h3>
+            <p>Wzmacnianie motoryki małej, grafomotoryki i chwytu.</p>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="card service-card" data-open="tus" aria-controls="tus">
+            <div class="service-icon-wrap">
+              <img src="assets/icons/tus.png" alt="TUS" class="service-icon" />
+            </div>
+            <h3>TUS</h3>
+            <p>Trening umiejętności społecznych w bezpiecznej atmosferze.</p>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="card service-card" data-open="neuroflow" aria-controls="neuroflow">
+            <div class="service-icon-wrap">
+              <img src="assets/icons/neuroflow.png" alt="Neuroflow / Biofeedback" class="service-icon" />
+            </div>
+            <h3>Neuroflow / Biofeedback</h3>
+            <p>Wsparcie koncentracji, samoregulacji i pracy nad stresem.</p>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTA SZCZEGÓŁOWA – AKORDEON -->
+    <section id="oferta-szczegoly" class="section offer-details">
+      <div class="container">
+        <h2>Szczegóły oferty</h2>
+        
+        <div class="accordion">
+          <!-- Diagnoza -->
+          <details id="diagnoza" class="acc-item">
+            <summary class="acc-summary">
+              <span class="acc-title">Diagnoza</span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="acc-content">
+              <p class="acc-desc">Kompleksowa ocena trudności dziecka, przeprowadzenie wywiadu z rodzicami oraz opracowanie indywidualnego planu terapii.</p>
+              
+              <div class="acc-grid">
+                <div class="acc-block">
+                  <h4>Dla kogo?</h4>
+                  <p>Dzieci z podejrzewanymi problemami sensorycznymi, motorycznymi lub emocjonalnymi.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Jak wygląda?</h4>
+                  <p>Obserwacja zabawy, zadania diagnostyczne, rozmowa z rodzicem.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Czas trwania</h4>
+                  <p>60–90 minut</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Korzyści</h4>
+                  <ul>
+                    <li>Dokładne rozpoznanie trudności</li>
+                    <li>Indywidualny plan terapii</li>
+                    <li>Rekomendacje dla rodziców</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <a href="#kontakt" class="btn btn-primary">Umów konsultację</a>
+            </div>
+          </details>
+
+          <!-- Terapia SI -->
+          <details id="terapia_si" class="acc-item">
+            <summary class="acc-summary">
+              <span class="acc-title">Terapia SI</span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="acc-content">
+              <p class="acc-desc">Ćwiczenia i zabawy wspierające prawidłową integrację bodźców sensorycznych oraz rozwój koordynacji.</p>
+              
+              <div class="acc-grid">
+                <div class="acc-block">
+                  <h4>Dla kogo?</h4>
+                  <p>Dzieci z dys funkcjami integracyjnymi, nadwrażliwością lub niedowrażliwością sensoryczną.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Jak wygląda?</h4>
+                  <p>Zabawy z użyciem sprzętu (wahadła, materace, tunel), ćwiczenia proprioceptywne.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Czas trwania</h4>
+                  <p>45–60 minut, 1–2x w tygodniu</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Korzyści</h4>
+                  <ul>
+                    <li>Poprawa koordynacji</li>
+                    <li>Lepsze procesy poznawcze</li>
+                    <li>Spokój i współpraca</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <a href="#kontakt" class="btn btn-primary">Umów konsultację</a>
+            </div>
+          </details>
+
+          <!-- Terapia ręki -->
+          <details id="terapia_reki" class="acc-item">
+            <summary class="acc-summary">
+              <span class="acc-title">Terapia ręki</span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="acc-content">
+              <p class="acc-desc">Wzmacnianie motoryki małej, trenowanie chwytu i grafomotoryki do poprawy zdolności pisania i samodzielności.</p>
+              
+              <div class="acc-grid">
+                <div class="acc-block">
+                  <h4>Dla kogo?</h4>
+                  <p>Dzieci z opóźnieniami motorycznymi, problemami z chwytem lub trudnościami w pisaniu.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Jak wygląda?</h4>
+                  <p>Zabawy manualne, ćwiczenia precyzji, prace z materiałami tekstylnymi i drobnymi przedmiotami.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Czas trwania</h4>
+                  <p>30–45 minut, 1–2x w tygodniu</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Korzyści</h4>
+                  <ul>
+                    <li>Lepszy chwyt piśmienniczego</li>
+                    <li>Płynniejsze pisanie</li>
+                    <li>Większa samodzielność</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <a href="#kontakt" class="btn btn-primary">Umów konsultację</a>
+            </div>
+          </details>
+
+          <!-- TUS -->
+          <details id="tus" class="acc-item">
+            <summary class="acc-summary">
+              <span class="acc-title">TUS – Trening Umiejętności Społecznych</span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="acc-content">
+              <p class="acc-desc">Wsparcie w rozwoju komunikacji, nawiązywaniu relacji rówieśniczych i radzeniu sobie w sytuacjach społecznych.</p>
+              
+              <div class="acc-grid">
+                <div class="acc-block">
+                  <h4>Dla kogo?</h4>
+                  <p>Dzieci z trudnościami w nawiązywaniu kontaktów, lękami społecznymi lub problemami z empatią.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Jak wygląda?</h4>
+                  <p>Zabawy grupowe i indywidualne, modelowanie zachowań, rozmowy na tematy społeczne.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Czas trwania</h4>
+                  <p>45 minut, 1–2x w tygodniu (grupy lub indywidualnie)</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Korzyści</h4>
+                  <ul>
+                    <li>Większa pewność siebie</li>
+                    <li>Lepsze rozumienie emocji</li>
+                    <li>Umiejętność pracy w grupie</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <a href="#kontakt" class="btn btn-primary">Umów konsultację</a>
+            </div>
+          </details>
+
+          <!-- Neuroflow -->
+          <details id="neuroflow" class="acc-item">
+            <summary class="acc-summary">
+              <span class="acc-title">Neuroflow / Biofeedback</span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="acc-content">
+              <p class="acc-desc">Zaawansowane wsparcie koncentracji, samoregulacji emocjonalnej i pracy nad stresem z użyciem technologii biofeedbacku.</p>
+              
+              <div class="acc-grid">
+                <div class="acc-block">
+                  <h4>Dla kogo?</h4>
+                  <p>Dzieci z ADHD, problemami z koncentracją, lękiem lub trudnościami w samoregulacji.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Jak wygląda?</h4>
+                  <p>Sesje z urządzeniami biofeedback, ćwiczenia oddychania, gry terapeutyczne.</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Czas trwania</h4>
+                  <p>30–45 minut, 1–2x w tygodniu</p>
+                </div>
+                <div class="acc-block">
+                  <h4>Korzyści</h4>
+                  <ul>
+                    <li>Lepsza samoregulacja</li>
+                    <li>Zwiększona koncentracja</li>
+                    <li>Zmniejszenie stresu i lęku</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <a href="#kontakt" class="btn btn-primary">Umów konsultację</a>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAK MOGĘ POMÓC -->
+    <section class="section help">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Jak mogę pomoć?</h2>
+            <p class="text-muted">Współpraca dostosowana do indywidualnych potrzeb twojego dziecka</p>
+          </div>
+        </div>
+
+        <div class="cards-4">
+          <a class="card help-card" href="#">
+            <img src="assets/images/pomoc-1.webp" alt="" />
+            <div class="help-body">
+              <h3>Trudności emocjonalne</h3>
+              <p>Wsparcie w radzeniu sobie z emocjami i budowaniu poczucia bezpieczeństwa.</p>
+            </div>
+          </a>
+
+          <a class="card help-card" href="#">
+            <img src="assets/images/pomoc-2.webp" alt="" />
+            <div class="help-body">
+              <h3>Problemy sensoryczne</h3>
+              <p>Pomoc przy nad- i podwrażliwościach, koordynacji oraz planowaniu ruchu.</p>
+            </div>
+          </a>
+
+          <a class="card help-card" href="#">
+            <img src="assets/images/pomoc-3.webp" alt="" />
+            <div class="help-body">
+              <h3>Trudności w nauce</h3>
+              <p>Wsparcie koncentracji, organizacji pracy i funkcji poznawczych.</p>
+            </div>
+          </a>
+
+          <a class="card help-card" href="#">
+            <img src="assets/images/pomoc-4.webp" alt="" />
+            <div class="help-body">
+              <h3>Rozwój społeczny</h3>
+              <p>Komunikacja, relacje rówieśnicze i trening umiejętności społecznych.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="center">
+          <a class="btn btn-secondary" href="#opinie">Zobacz wszystkie opinie</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CENNIK -->
+    <section id="cennik" class="section pricing">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Cennik</h2>
+            <p class="text-muted">Ceny orientacyjne. Szczegóły i rabaty dla pakietów ustal w kontakcie</p>
+          </div>
+        </div>
+        
+        <div class="pricing-cards">
+          <div class="card pricing-card">
+            <div class="card-head">
+              <h3>Konsultacja</h3>
+              <span class="badge">45 min</span>
+            </div>
+            <div class="price-display">200 zł</div>
+            <ul class="pricing-list">
+              <li>Wstępna ocena potrzeb</li>
+              <li>Rozmowa z rodzicami</li>
+              <li>Plan działań</li>
+            </ul>
+            <details class="mini-details">
+              <summary>Więcej szczegółów</summary>
+              <div class="details-body">
+                <p>Pierwszy kontakt to poznanie dziecka i zrozumienie jego potrzeb. Podczas konsultacji przeprowadzam wstępną obserwację i rozmowiam z rodzicami o dodatkowym kontekście.</p>
+              </div>
+            </details>
+            <a href="#kontakt" class="btn btn-secondary btn-block">Zapytaj o termin</a>
+          </div>
+
+          <div class="card pricing-card featured">
+            <div class="card-head">
+              <h3>Diagnoza</h3>
+              <span class="badge badge-primary">90 min</span>
+            </div>
+            <div class="price-display">350 zł</div>
+            <ul class="pricing-list">
+              <li>Kompleksowa ocena</li>
+              <li>Plan indywidualny</li>
+              <li>Rekomendacje</li>
+            </ul>
+            <details class="mini-details">
+              <summary>Więcej szczegółów</summary>
+              <div class="details-body">
+                <p>Pełna diagnoza obejmuje obserwację zabawy, zadania diagnostyczne, szczegółowy wywiad z rodzicami oraz opracowanie indywidualnego planu terapii dostosowanego do potrzeb dziecka.</p>
+              </div>
+            </details>
+            <a href="#kontakt" class="btn btn-primary btn-block">Zapytaj o termin</a>
+          </div>
+
+          <div class="card pricing-card">
+            <div class="card-head">
+              <h3>Sesja terapeutyczna</h3>
+              <span class="badge">45 min</span>
+            </div>
+            <div class="price-display">120 zł</div>
+            <ul class="pricing-list">
+              <li>SI, ręka, TUS, Neuroflow</li>
+              <li>Indywidualna terapia</li>
+              <li>Dostosowana do potrzeb</li>
+            </ul>
+            <details class="mini-details">
+              <summary>Więcej szczegółów</summary>
+              <div class="details-body">
+                <p>Sesje terapeutyczne są bezpośrednio dostosowane do diagnozy i celów dziecka. Możliwliwe jest proponowanie różnych form terapii w zależności od potrzeb.</p>
+              </div>
+            </details>
+            <a href="#kontakt" class="btn btn-secondary btn-block">Zapytaj o termin</a>
+          </div>
+
+          <div class="card pricing-card">
+            <div class="card-head">
+              <h3>TUS grupowy</h3>
+              <span class="badge">45 min</span>
+            </div>
+            <div class="price-display">60 zł</div>
+            <ul class="pricing-list">
+              <li>Mała grupa (4–5)</li>
+              <li>Umiejętności społeczne</li>
+              <li>Zabawy integracyjne</li>
+            </ul>
+            <details class="mini-details">
+              <summary>Więcej szczegółów</summary>
+              <div class="details-body">
+                <p>Trening w grupie daje dzieciom możliwość �wiczenia nowych umiejętności w naturalnym otoczeniu rówieśników, co znacznie przyspiesza ich rozwój.</p>
+              </div>
+            </details>
+            <a href="#kontakt" class="btn btn-secondary btn-block">Zapytaj o termin</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (AKORDEON) -->
+    <section id="faq" class="section faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Najczęstsze pytania</h2>
+            <p class="text-muted">Szybkie odpowiedzi na pytania rodziców</p>
+          </div>
+          <div class="section-head__action">
+            <button id="faqToggleOpen" class="btn btn-outline btn-sm">Otwórz wszystko</button>
+            <button id="faqToggleClose" class="btn btn-outline btn-sm" style="display:none;">Zamknij wszystko</button>
+          </div>
+        </div>
+        
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-summary">Jak wygląda pierwsza konsultacja?</summary>
+            <div class="faq-body">
+              <p>Wstępny kontakt, zapoznanie się z dzieckiem, ocena potrzeb i ustalenie dalszych kroków. Trwa ok. 45 minut.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Jak często odbywają się zajęcia?</summary>
+            <div class="faq-body">
+              <p>Zazwyczaj 1–2x w tygodniu. Częstotliwość zależy od rodzaju problemu i postępów dziecka.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Czy rodzic jest obecny podczas zajęć?</summary>
+            <div class="faq-body">
+              <p>To zależy od wieku i typu zaburzenia. U małych dzieci zachęcam do obecności rodzica.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Ile czasu trwa diagnoza?</summary>
+            <div class="faq-body">
+              <p>90 minut. Obejmuje obserwację, zadania testowe, rozmowę z rodzicami i plan terapii.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Dla kogo jest TUS?</summary>
+            <div class="faq-body">
+              <p>Dla dzieci z trudnościami w nawiązywaniu przyjaźni, komunikacji lub rozumieniu reguł społecznych.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Jak przygotować dziecko do pierwszych zajęć?</summary>
+            <div class="faq-body">
+              <p>Porozmawiaj przyjaznym tonem. Wyjaśnij, że terapeuta będzie się bawić i pomagać. Unikaj budowania lęku.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Czy zajęcia online są dostępne?</summary>
+            <div class="faq-body">
+              <p>Konsultacje i TUS tak. SI i terapia ręki wymagają bezpośredniej pracy ze sprzętem i są stacjonarne.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Jakie formy płatności dostępne?</summary>
+            <div class="faq-body">
+              <p>Gotówka, przelew, karta. Dla pakietów wielomiesięcznych dostępne rabaty.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Czy refunduje NFZ?</summary>
+            <div class="faq-body">
+              <p>Terapia prywatna zazwyczaj nie. Sprawdź swoje dodatkowe ubezpieczenie zdrowotne.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Jak szybko widać postępy?</summary>
+            <div class="faq-body">
+              <p>Pierwsze zmiany po 4–6 tygodniach. Znaczące postępy wymagają 2–3 miesiące systematyczności.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPINIE + KONTAKT -->
+    <section id="opinie" class="section testimonials">
+      <div class="container two-col">
+        <div>
+          <h2>Co mówią rodzice?</h2>
+
+          <div class="cards-2">
+            <article class="card quote-card">
+              <div class="quote-head">
+                <img src="assets/icons/avatar.svg" alt="" class="avatar"/>
+                <div class="stars" aria-label="5 na 5">
+                  ★★★★★
+                </div>
+              </div>
+              <p>„Córka w końcu chodzi na terapię bez lęku i stresu… Polecam!”</p>
+            </article>
+
+            <article class="card quote-card">
+              <div class="quote-head">
+                <img src="assets/icons/avatar.svg" alt="" class="avatar"/>
+                <div class="stars" aria-label="5 na 5">
+                  ★★★★★
+                </div>
+              </div>
+              <p>„Pani Iwona od razu wzbudziła zaufanie. Bardzo polecam współpracę.”</p>
+            </article>
+          </div>
+        </div>
+
+        <div id="kontakt" class="contact card">
+          <h2>Kontakt</h2>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Imię i nazwisko *</label>
+              <input type="text" id="name" name="name" required />
+              <span class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact">Email lub telefon *</label>
+              <input type="text" id="contact" name="contact" required />
+              <span class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Wiadomość *</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <span class="error-msg"></span>
+            </div>
+
+            <div class="form-group form-checkbox">
+              <input type="checkbox" id="consent" name="consent" required />
+              <label for="consent">Zgadzam się na przetwarzanie danych osobowych *</label>
+              <span class="error-msg"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary full">Wyślij wiadomość</button>
+            <div class="form-feedback" role="status" aria-live="polite"></div>
+          </form>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon">📞</span>
+              <a href="tel:+48667003580">667 003 580</a>
+            </li>
+            <li>
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:iwona-sadzik@wp.pl">iwona-sadzik@wp.pl</a>
+            </li>
+            <li>
+              <span class="contact-icon">📍</span>
+              <span>ul. Zoka 1, Warszawa</span>
+            </li>
+            <li>
+              <span class="contact-icon">🕒</span>
+              <span>pon – pt: 9:00 – 18:00</span>
+            </li>
+          </ul>
+
+          <div class="social">
+            <a href="#" aria-label="Facebook" class="social-btn">f</a>
+            <a href="#" aria-label="Instagram" class="social-btn">◎</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back-to-Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Do góry" type="button">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Centrum Terapii Neurorozwojowej</span>
+      <span class="small">Projekt starter – podmień treści, zdjęcia i linki.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
