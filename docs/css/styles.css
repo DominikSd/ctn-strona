@@ -209,6 +209,14 @@ h3{ font-size:1.1rem; }
   max-width: 46ch;
 }
 
+.hero-copy .about-lead{
+  margin-top: 0.6rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 65ch;
+  line-height: 1.8;
+}
+
 /* ====== SERVICES (5 kafelków) ====== */
 .cards-5{
   display:grid;
@@ -1540,6 +1548,54 @@ p{
   font-size: 0.95rem;
   color: var(--text);
   line-height: 1.6;
+}
+
+/* ====== ABOUT ME ACCORDION ====== */
+.about-acc{
+  border: 1px solid rgba(108,99,137,.12);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 4px 12px rgba(108,99,137,.06);
+  margin-top: 1.6rem;
+}
+
+/* ensure gap between multiple accordions */
+.about-acc + .about-acc{
+  margin-top: 0.8rem;
+}
+.about-acc summary{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  font-weight: 500;
+  user-select: none;
+  transition: background .25s ease, border-color .25s ease;
+}
+.about-acc summary::after{
+  content: "+";
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: transform .3s ease;
+}
+.about-acc summary:hover,
+.about-acc summary:focus-visible{
+  border-color: rgba(108,99,137,.25);
+  background: var(--surface-2);
+}
+.about-acc[open] summary::after{
+  transform: rotate(45deg);
+}
+.about-acc[open] summary{
+  background: linear-gradient(135deg, var(--surface), var(--pastel-lilac));
+}
+.about-acc__body{
+  padding: 1.4rem 1.6rem;
+  max-width: 70ch;
+  line-height: 1.65;
+  color: var(--text);
 }
 
 /* Footer */
