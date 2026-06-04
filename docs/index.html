@@ -702,56 +702,38 @@
         <div class="section-head">
           <div>
             <h2 id="rezerwacja-title">Umów konsultację</h2>
-            <p class="text-muted">Wybierz dogodny termin konsultacji telefonicznej w kalendarzu online. Po rezerwacji otrzymasz potwierdzenie z Google Calendar.</p>
+            <p class="text-muted">Wybierz rodzaj spotkania i przejdź do kalendarza rezerwacji. Po zapisaniu terminu otrzymasz potwierdzenie z Google Calendar.</p>
           </div>
         </div>
 
-        <div class="booking-card card">
-          <div class="booking-info">
-            <span class="booking-kicker">Konsultacja telefoniczna</span>
-            <h3>Jak wygląda rezerwacja?</h3>
-            <ol class="booking-steps">
-              <li>
-                <span class="booking-step-number">1</span>
-                <div>
-                  <strong>Wybierz termin</strong>
-                  <p>Sprawdź dostępne godziny w kalendarzu i wybierz pasujący dzień.</p>
-                </div>
-              </li>
-              <li>
-                <span class="booking-step-number">2</span>
-                <div>
-                  <strong>Uzupełnij dane</strong>
-                  <p>Podaj podstawowe informacje potrzebne do potwierdzenia konsultacji.</p>
-                </div>
-              </li>
-              <li>
-                <span class="booking-step-number">3</span>
-                <div>
-                  <strong>Odbierz potwierdzenie</strong>
-                  <p>Po rezerwacji otrzymasz wiadomość z terminem i szczegółami spotkania.</p>
-                </div>
-              </li>
-            </ol>
+        <div class="booking-grid">
+          <!-- Podmień href poniższych przycisków na właściwe linki Google Booking Page. -->
+          <article class="booking-option card">
+            <div class="booking-option__head">
+              <h3>Konsultacja telefoniczna</h3>
+              <span class="badge">15 min</span>
+            </div>
+            <p>Krótka rozmowa wstępna, podczas której możesz opisać potrzeby dziecka i ustalić dalsze kroki.</p>
+            <a class="btn btn-primary booking-option__btn" href="GOOGLE_BOOKING_PHONE" target="_blank" rel="noopener noreferrer">Wybierz termin</a>
+          </article>
 
-            <p class="booking-fallback">
-              Jeśli kalendarz nie ładuje się poprawnie, zadzwoń:
-              <a href="tel:+48667003580">667 003 580</a>.
-            </p>
-          </div>
+          <article class="booking-option card">
+            <div class="booking-option__head">
+              <h3>Diagnoza</h3>
+              <span class="badge badge-primary">60–90 min</span>
+            </div>
+            <p>Spotkanie diagnostyczne obejmujące rozmowę, obserwację i dobór rekomendacji do potrzeb dziecka.</p>
+            <a class="btn btn-primary booking-option__btn" href="GOOGLE_BOOKING_DIAGNOZA" target="_blank" rel="noopener noreferrer">Wybierz termin</a>
+          </article>
 
-          <div class="booking-calendar">
-            <!-- Google Calendar Appointment Scheduling begin - w razie zmiany podmień src na link Google Calendar booking page -->
-            <iframe
-              title="Rezerwacja konsultacji telefonicznej w Google Calendar"
-              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0oeBgdGtW4faF9wsslzGPJSbXRF9dHACU0u6AJXERc-p0YyuIv646klpunCO7IlZZYPJrLojg8?gv=true"
-              width="100%"
-              height="600"
-              loading="lazy"
-              frameborder="0">
-            </iframe>
-            <!-- end Google Calendar Appointment Scheduling -->
-          </div>
+          <article class="booking-option card">
+            <div class="booking-option__head">
+              <h3>Terapia SI</h3>
+              <span class="badge">45 min</span>
+            </div>
+            <p>Zajęcia wspierające integrację sensoryczną, koordynację i codzienne funkcjonowanie dziecka.</p>
+            <a class="btn btn-primary booking-option__btn" href="GOOGLE_BOOKING_TERAPIA_SI" target="_blank" rel="noopener noreferrer">Wybierz termin</a>
+          </article>
         </div>
       </div>
     </section>
