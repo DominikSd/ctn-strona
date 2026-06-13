@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iwona-sadzik.netlify.app/sitemap.xml
