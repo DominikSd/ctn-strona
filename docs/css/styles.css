@@ -351,6 +351,20 @@ h3{ font-size:1.1rem; }
   gap:1rem;
   flex-wrap:wrap;
 }
+
+.site-credit{
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+.site-credit a{
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.site-credit a:hover{
+  text-decoration: underline;
+}
 .small{ font-size:.92rem; }
 
 /* ====== RESPONSYWNOŚĆ ====== */
@@ -2106,6 +2120,10 @@ body.modal-open{
 
 .footer-bottom p{
   margin: 0;
+}
+
+.footer-bottom .site-credit{
+  margin-top: .35rem;
 }
 
 /* Responsive for subpages */
