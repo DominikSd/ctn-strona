@@ -1144,8 +1144,9 @@ p{
 
 /* ====== ANNOUNCEMENT WIDGET ====== */
 .announcement-widget{
+  --announcement-offset: clamp(1rem, 8vh, 5rem);
   position: fixed;
-  top: calc(var(--header-h) + 38vh);
+  top: calc(var(--header-h) + var(--announcement-offset));
   right: 0;
   z-index: 35;
   display: grid;
@@ -1167,7 +1168,7 @@ p{
   border-radius: 18px 0 0 18px;
   background: linear-gradient(180deg, var(--primary), var(--primary-2));
   color: #fff;
-  box-shadow: 0 12px 30px rgba(25,16,40,.14);
+  box-shadow: 0 12px 30px rgba(25,16,40,.16), 0 0 0 1px rgba(255,255,255,.18) inset;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -1211,6 +1212,9 @@ p{
   background: rgba(255,255,255,.96);
   border-color: rgba(108,99,137,.14);
   box-shadow: 0 18px 44px rgba(25,16,40,.14);
+  max-height: calc(100vh - var(--header-h) - var(--announcement-offset) - 1rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .announcement-kicker{
@@ -1342,10 +1346,10 @@ body.modal-open{
 
 @keyframes announcementPulse{
   0%, 100%{
-    box-shadow: 0 12px 30px rgba(25,16,40,.14);
+    box-shadow: 0 12px 30px rgba(25,16,40,.16), 0 0 0 1px rgba(255,255,255,.18) inset;
   }
   50%{
-    box-shadow: 0 12px 30px rgba(108,99,137,.28);
+    box-shadow: 0 14px 34px rgba(108,99,137,.28), 0 0 18px rgba(201,182,230,.38);
   }
 }
 
@@ -1363,10 +1367,17 @@ body.modal-open{
   }
 
   .announcement-tab{
-    width: 54px;
-    height: 54px;
+    width: 60px;
+    height: 60px;
     min-height: 0;
     border-radius: 50%;
+    box-shadow: 0 12px 30px rgba(108,99,137,.24), 0 0 16px rgba(201,182,230,.34);
+  }
+
+  .announcement-tab__mark{
+    width: 32px;
+    height: 32px;
+    font-size: 1.32rem;
   }
 
   .announcement-tab__label{
