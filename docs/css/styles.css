@@ -1177,7 +1177,6 @@ p{
   align-items: center;
   justify-content: center;
   gap: .45rem;
-  animation: announcementPulse 5.2s cubic-bezier(.45, 0, .25, 1) infinite;
 }
 
 .announcement-tab::after{
@@ -1188,10 +1187,10 @@ p{
   border-radius: inherit;
   background: rgba(201,182,230,.26);
   box-shadow: 0 0 24px rgba(108,99,137,.34), 0 0 42px rgba(201,182,230,.22);
-  opacity: .4;
+  opacity: .44;
   pointer-events: none;
   will-change: opacity, transform;
-  animation: announcementGlow 5.2s cubic-bezier(.45, 0, .25, 1) infinite;
+  animation: announcementGlow 3.8s ease-in-out infinite alternate;
 }
 
 .announcement-tab:focus-visible,
@@ -1212,7 +1211,7 @@ p{
   font-weight: 700;
   font-size: 1.15rem;
   text-shadow: 0 0 12px rgba(255,255,255,.42);
-  animation: announcementMarkPulse 5.2s cubic-bezier(.45, 0, .25, 1) infinite;
+  animation: announcementMarkPulse 3.8s ease-in-out infinite alternate;
 }
 
 .announcement-tab__label{
@@ -1333,61 +1332,25 @@ body.modal-open{
   overflow: hidden;
 }
 
-@keyframes announcementPulse{
-  0%, 18%, 100%{
-    box-shadow: 0 14px 34px rgba(25,16,40,.20), 0 0 0 1px rgba(255,255,255,.22) inset;
-  }
-  42%, 58%{
-    box-shadow: 0 18px 44px rgba(108,99,137,.38), 0 0 28px rgba(201,182,230,.52), 0 0 0 1px rgba(255,255,255,.28) inset;
-  }
-  78%{
-    box-shadow: 0 16px 38px rgba(108,99,137,.28), 0 0 18px rgba(201,182,230,.34), 0 0 0 1px rgba(255,255,255,.24) inset;
-  }
-}
-
 @keyframes announcementGlow{
-  0%, 100%{
-    opacity: .38;
-    transform: scale(.985);
+  from{
+    opacity: .42;
+    transform: scale(.99);
   }
-  18%{
-    opacity: .44;
-    transform: scale(.995);
-  }
-  34%{
-    opacity: .6;
-    transform: scale(1.018);
-  }
-  48%, 56%{
-    opacity: .78;
+  to{
+    opacity: .76;
     transform: scale(1.04);
-  }
-  72%{
-    opacity: .58;
-    transform: scale(1.014);
-  }
-  88%{
-    opacity: .44;
-    transform: scale(.995);
   }
 }
 
 @keyframes announcementMarkPulse{
-  0%, 18%, 100%{
+  from{
     background: rgba(255,255,255,.18);
     text-shadow: 0 0 12px rgba(255,255,255,.42);
   }
-  36%{
-    background: rgba(255,255,255,.23);
-    text-shadow: 0 0 15px rgba(255,255,255,.56);
-  }
-  50%, 58%{
-    background: rgba(255,255,255,.28);
-    text-shadow: 0 0 18px rgba(255,255,255,.7);
-  }
-  78%{
-    background: rgba(255,255,255,.22);
-    text-shadow: 0 0 14px rgba(255,255,255,.52);
+  to{
+    background: rgba(255,255,255,.27);
+    text-shadow: 0 0 18px rgba(255,255,255,.68);
   }
 }
 
