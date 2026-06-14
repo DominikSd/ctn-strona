@@ -143,6 +143,145 @@ if(faqToggleOpen && faqToggleClose){
     faqToggleOpen.style.display = 'block';
   });
 }
+
+/* ====== ACTIVE ANNOUNCEMENT ====== */
+const activeAnnouncement = {
+  enabled: true,
+  title: 'Akademia Twórczości Małego Odkrywcy',
+  shortText: 'Zajęcia twórcze dla dzieci 5–10 lat',
+  price: '55 zł za zajęcia',
+  // Miniatura w panelu używa tego samego pliku; projekt nie ma narzędzi do generowania osobnego thumb.webp.
+  imageSrc: 'assets/aktualnosci/akademia-tworczosci-malego-odkrywcy.jpeg',
+  fallbackImageSrc: 'assets/aktualnosci/akademia-tworczosci-malego-odkrywcy-fallback.svg',
+  imageAlt: 'Plakat Akademia Twórczości Małego Odkrywcy',
+  detailsUrl: 'aktualnosci.html#akademia-tworczosci'
+};
+
+(function initAnnouncement(){
+  const config = activeAnnouncement;
+  const widget = document.querySelector('[data-announcement-widget]');
+  const modal = document.querySelector('[data-announcement-modal]');
+  const toggleBtn = document.querySelector('[data-announcement-toggle]');
+  const panel = document.querySelector('[data-announcement-panel]');
+
+  const isHomeAnnouncement = widget && modal && toggleBtn;
+  const pageImages = document.querySelectorAll('[data-announcement-page-image]');
+
+  const setImageWithFallback = (img) => {
+    if(!img) return;
+    img.src = config.imageSrc;
+    img.alt = config.imageAlt;
+    img.addEventListener('error', () => {
+      if(config.fallbackImageSrc && !img.dataset.fallbackLoaded){
+        img.dataset.fallbackLoaded = 'true';
+        img.src = config.fallbackImageSrc;
+      }
+    }, { once: true });
+  };
+
+  pageImages.forEach(setImageWithFallback);
+
+  if(!isHomeAnnouncement) return;
+
+  if(!config.enabled){
+    widget.hidden = true;
+    modal.hidden = true;
+    return;
+  }
+
+  const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+  const openButtons = document.querySelectorAll('[data-announcement-open]');
+  const closeBtn = document.querySelector('[data-announcement-close]');
+  const titleEls = document.querySelectorAll('[data-announcement-title], [data-announcement-modal-title]');
+  const shortEl = document.querySelector('[data-announcement-short]');
+  const priceEl = document.querySelector('[data-announcement-price]');
+  const detailLinks = document.querySelectorAll('[data-announcement-details], [data-announcement-modal-details]');
+  const images = document.querySelectorAll('[data-announcement-image], [data-announcement-modal-image]');
+  const mobileQuery = window.matchMedia('(max-width: 720px)');
+  let lastFocus = null;
+
+  titleEls.forEach(el => { el.textContent = config.title; });
+  if(shortEl) shortEl.textContent = config.shortText;
+  if(priceEl) priceEl.textContent = config.price;
+  detailLinks.forEach(link => { link.href = config.detailsUrl; });
+  images.forEach(setImageWithFallback);
+
+  const setPanelState = (isOpen) => {
+    widget.classList.toggle('is-open', isOpen);
+    toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    if(panel) panel.setAttribute('aria-hidden', String(!isOpen));
+  };
+
+  const getFocusable = () => Array.from(modal.querySelectorAll(focusableSelector))
+    .filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+
+  const openModal = (trigger) => {
+    lastFocus = trigger || document.activeElement;
+    modal.hidden = false;
+    document.body.classList.add('modal-open');
+    setPanelState(false);
+    requestAnimationFrame(() => {
+      const focusable = getFocusable();
+      (closeBtn || focusable[0] || modal).focus();
+    });
+  };
+
+  const closeModal = () => {
+    modal.hidden = true;
+    document.body.classList.remove('modal-open');
+    if(lastFocus && typeof lastFocus.focus === 'function'){
+      lastFocus.focus();
+    }
+  };
+
+  toggleBtn.addEventListener('click', () => {
+    if(mobileQuery.matches){
+      openModal(toggleBtn);
+      return;
+    }
+    setPanelState(!widget.classList.contains('is-open'));
+  });
+
+  openButtons.forEach(button => {
+    button.addEventListener('click', () => openModal(button));
+  });
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  modal.addEventListener('click', (event) => {
+    if(event.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if(event.key === 'Escape'){
+      if(!modal.hidden){
+        closeModal();
+      } else if(widget.classList.contains('is-open')){
+        setPanelState(false);
+        toggleBtn.focus();
+      }
+    }
+
+    if(event.key === 'Tab' && !modal.hidden){
+      const focusable = getFocusable();
+      if(!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if(event.shiftKey && document.activeElement === first){
+        event.preventDefault();
+        last.focus();
+      } else if(!event.shiftKey && document.activeElement === last){
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+})();
 const navLinks = document.querySelectorAll('.nav-list a[href^="#"]');
 const sections = [...navLinks].map(link => {
   const id = link.getAttribute('href');
@@ -321,4 +460,3 @@ if(contactForm){
     return `mailto:${to}?subject=${subject}&body=${body}`;
   }
 }
-

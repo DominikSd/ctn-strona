@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1300" viewBox="0 0 900 1300" role="img" aria-labelledby="title desc">
+  <title id="title">Akademia Twórczości Małego Odkrywcy</title>
+  <desc id="desc">Fallback plakatu zajęć twórczych dla dzieci 5-10 lat.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset=".52" stop-color="#fff7fb"/>
+      <stop offset="1" stop-color="#eef8ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2d2a3a" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="900" height="1300" fill="url(#paper)"/>
+  <circle cx="94" cy="104" r="54" fill="#f6c7d5" opacity=".6"/>
+  <circle cx="790" cy="118" r="72" fill="#bfe6f5" opacity=".7"/>
+  <circle cx="802" cy="1090" r="94" fill="#e9ddff" opacity=".75"/>
+  <path d="M48 236c90-65 156-54 236-5 88 54 158 43 233-18 80-64 166-68 296 12" fill="none" stroke="#6c6389" stroke-width="8" stroke-linecap="round" opacity=".22"/>
+  <g font-family="Poppins, Inter, Arial, sans-serif" text-anchor="middle">
+    <text x="450" y="170" font-size="76" font-weight="700" fill="#15234f">AKADEMIA</text>
+    <text x="450" y="248" font-size="58" font-weight="700" fill="#6c6389">TWÓRCZOŚCI</text>
+    <rect x="122" y="292" width="656" height="84" rx="28" fill="#1266a8"/>
+    <text x="450" y="350" font-size="42" font-weight="700" fill="#fff">MAŁEGO ODKRYWCY</text>
+    <text x="450" y="444" font-size="32" font-weight="600" fill="#2d2a3a">Tworzymy • odkrywamy • wyrażamy siebie</text>
+    <text x="450" y="504" font-size="30" font-weight="500" fill="#6b6780">Sztuka, która rozwija wyobraźnię, emocje i kreatywność</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="95" y="580" width="710" height="250" rx="32" fill="#fff"/>
+    <g transform="translate(143 626)">
+      <circle cx="64" cy="64" r="64" fill="#ffd8a8"/>
+      <path d="M29 95c32-72 65-72 99 0" fill="none" stroke="#d24a78" stroke-width="16" stroke-linecap="round"/>
+      <circle cx="64" cy="44" r="28" fill="#2d2a3a"/>
+      <text x="164" y="52" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="#2d2a3a">Wyjątkowe materiały i techniki</text>
+      <text x="164" y="104" font-family="Inter, Arial, sans-serif" font-size="26" fill="#6b6780">Farby, rysunek, fotografia, glina, natura</text>
+      <text x="164" y="150" font-family="Inter, Arial, sans-serif" font-size="26" fill="#6b6780">oraz działania sensoryczne.</text>
+    </g>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(110 900)">
+      <rect width="220" height="145" rx="28" fill="#eae3f8"/>
+      <text x="110" y="56" text-anchor="middle" font-size="26" font-weight="700" fill="#6c6389">DLA DZIECI</text>
+      <text x="110" y="102" text-anchor="middle" font-size="42" font-weight="700" fill="#2d2a3a">5–10 lat</text>
+    </g>
+    <g transform="translate(340 900)">
+      <rect width="220" height="145" rx="28" fill="#e6f4ff"/>
+      <text x="110" y="54" text-anchor="middle" font-size="24" font-weight="700" fill="#1266a8">KAMERALNE</text>
+      <text x="110" y="96" text-anchor="middle" font-size="34" font-weight="700" fill="#2d2a3a">5–6 dzieci</text>
+    </g>
+    <g transform="translate(570 900)">
+      <rect width="220" height="145" rx="28" fill="#fff2eb"/>
+      <text x="110" y="54" text-anchor="middle" font-size="24" font-weight="700" fill="#c64d7a">CENA</text>
+      <text x="110" y="98" text-anchor="middle" font-size="42" font-weight="700" fill="#2d2a3a">55 zł</text>
+    </g>
+  </g>
+  <g font-family="Poppins, Inter, Arial, sans-serif" text-anchor="middle">
+    <text x="450" y="1144" font-size="34" font-weight="500" fill="#6b6780">Zajęcia prowadzi</text>
+    <text x="450" y="1204" font-size="54" font-weight="700" fill="#6c6389">Iwona Sadzik</text>
+    <text x="450" y="1250" font-size="36" font-weight="700" fill="#2d2a3a">667 003 580</text>
+  </g>
+</svg>

@@ -214,6 +214,27 @@
     </div>
   </header>
 
+  <aside class="announcement-widget" data-announcement-widget aria-label="Aktualność">
+    <button class="announcement-tab" type="button" data-announcement-toggle aria-expanded="false" aria-controls="announcementPanel" aria-label="Pokaż aktualność">
+      <span class="announcement-tab__mark" aria-hidden="true">!</span>
+      <span class="announcement-tab__label">Aktualność</span>
+    </button>
+
+    <div id="announcementPanel" class="announcement-panel card" data-announcement-panel aria-hidden="true">
+      <p class="announcement-kicker">Aktualność</p>
+      <h2 data-announcement-title>Akademia Twórczości Małego Odkrywcy</h2>
+      <button class="announcement-thumb" type="button" data-announcement-open aria-label="Powiększ ogłoszenie Akademia Twórczości Małego Odkrywcy">
+        <img src="assets/aktualnosci/akademia-tworczosci-malego-odkrywcy.jpeg" alt="Plakat Akademia Twórczości Małego Odkrywcy" data-announcement-image />
+      </button>
+      <p class="announcement-short" data-announcement-short>Zajęcia twórcze dla dzieci 5–10 lat</p>
+      <p class="announcement-price" data-announcement-price>55 zł za zajęcia</p>
+      <div class="announcement-actions">
+        <button class="btn btn-primary btn-sm" type="button" data-announcement-open>Powiększ ogłoszenie</button>
+        <a class="announcement-link" href="aktualnosci.html#akademia-tworczosci" data-announcement-details>Szczegóły</a>
+      </div>
+    </div>
+  </aside>
+
   <main>
     <!-- HERO + O MNIE -->
     <section id="o-mnie" class="hero">
@@ -970,6 +991,15 @@
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
+
+  <div class="announcement-modal" data-announcement-modal role="dialog" aria-modal="true" aria-labelledby="announcementModalTitle" hidden>
+    <div class="announcement-modal__content" role="document">
+      <button class="announcement-modal__close" type="button" data-announcement-close aria-label="Zamknij ogłoszenie">×</button>
+      <h2 id="announcementModalTitle" data-announcement-modal-title>Akademia Twórczości Małego Odkrywcy</h2>
+      <img src="assets/aktualnosci/akademia-tworczosci-malego-odkrywcy.jpeg" alt="Plakat Akademia Twórczości Małego Odkrywcy" data-announcement-modal-image />
+      <a class="btn btn-primary announcement-modal__link" href="aktualnosci.html#akademia-tworczosci" data-announcement-modal-details>Przejdź do aktualności</a>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
