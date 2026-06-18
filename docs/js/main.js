@@ -333,7 +333,9 @@ if(contactForm){
   const contactInput = document.getElementById('contact');
   const messageInput = document.getElementById('message');
   const consentInput = document.getElementById('consent');
+  const botFieldInput = contactForm.querySelector('[name="bot-field"]');
   const feedbackEl = contactForm.querySelector('.form-feedback');
+  const messageMaxLength = Number(messageInput.getAttribute('maxlength')) || 1500;
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -371,6 +373,12 @@ if(contactForm){
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    if(botFieldInput && botFieldInput.value.trim()){
+      contactForm.reset();
+      showFeedback('Dziękuję! Odezwiemy się wkrótce.', 'success');
+      return;
+    }
+
     let isValid = true;
 
     // Validate name
@@ -394,8 +402,12 @@ if(contactForm){
     }
 
     // Validate message
-    if(!messageInput.value.trim()){
+    const messageVal = messageInput.value.trim();
+    if(!messageVal){
       showError(messageInput, 'Wpisz wiadomość');
+      isValid = false;
+    } else if(messageVal.length > messageMaxLength){
+      showError(messageInput, `Wiadomość może mieć maksymalnie ${messageMaxLength} znaków`);
       isValid = false;
     } else {
       clearError(messageInput);
@@ -416,8 +428,9 @@ if(contactForm){
     formData.append('form-name', 'kontakt');
     formData.append('name', nameInput.value.trim());
     formData.append('contact', contactVal);
-    formData.append('message', messageInput.value.trim());
+    formData.append('message', messageVal);
     formData.append('consent', consentInput.checked ? 'on' : 'off');
+    formData.append('bot-field', botFieldInput ? botFieldInput.value : '');
 
     // Submit via fetch to Netlify Forms endpoint
     fetch('/', {
@@ -441,7 +454,7 @@ if(contactForm){
       const mailtoLink = buildMailtoLink(
         nameInput.value.trim(),
         contactVal,
-        messageInput.value.trim()
+        messageVal
       );
       
       const fallbackBtn = document.getElementById('mailtoFallback');
